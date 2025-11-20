@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">API LIST</string>
+
+    <!-- Activity Main (Pantalla de Bienvenida) -->
+    <string name="app_logo">Logo de la aplicación</string>
+    <string name="main_title">¡Bienvenido!</string>
+    <string name="main_subtitle">Gestiona tu información de manera fácil y eficiente</string>
+    <string name="btn_continue">Comenzar</string>
+
+    <!-- Activity Lista -->
+    <string name="input_section_title">Ingresa los Datos</string>
+    <string name="label_producto">NOMBRE DEL PRODUCTO</string>
+    <string name="hint_producto">Escribe el nombre del producto</string>
+    <string name="label_descripcion">DESCRIPCIÓN</string>
+    <string name="hint_descripcion">Agrega una descripción</string>
+    <string name="label_precio">PRECIO</string>
+    <string name="hint_precio">Ej. 12.50</string>
+    <string name="label_cantidad">CANTIDAD EN STOCK</string>
+    <string name="hint_cantidad">Ej. 100</string>
+    <string name="label_unidad">UNIDAD DE MEDIDA</string>
+    <string name="hint_unidad">unidad, caja, docena…</string>
+    <string name="label_fecha_vencimiento">FECHA DE VENCIMIENTO</string>
+    <string name="hint_fecha_vencimiento">YYYY-MM-DD</string>
+    <string name="label_estado">ESTADO</string>
+    <string name="label_categoria">CATEGORÍA</string>
+    <string name="hint_categoria">Ej. Alimentos</string>
+    <string name="btn_add_item">Agregar Producto</string>
+    <string-array name="estado_options">
+        <item>Disponible</item>
+        <item>Fuera de Stock</item>
+    </string-array>
+
+    <string name="list_title">Mis Elementos</string>
+    <string name="item_count">0 items</string>
+    <string name="empty_list_message">No hay elementos en la lista.\nAgrega uno usando el formulario superior.</string>
+
+    <!-- Item de Lista -->
+    <string name="item_icon">Icono del elemento</string>
+    <string name="sample_item_title">Título del Elemento</string>
+    <string name="sample_item_description">Descripción detallada del elemento</string>
+    <string name="item_action">Acción del elemento</string>
+</resources>

@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- Rectángulo de fondo -->
+    <path
+        android:fillColor="@color/divider_color"
+        android:pathData="M20,25 L76,25 L76,71 L20,71 Z"/>
+
+    <!-- Líneas representando lista vacía -->
+    <path
+        android:fillColor="@color/background_light"
+        android:pathData="M30,35 L66,35 L66,38 L30,38 Z"/>
+
+    <path
+        android:fillColor="@color/background_light"
+        android:pathData="M30,45 L66,45 L66,48 L30,48 Z"/>
+
+    <path
+        android:fillColor="@color/background_light"
+        android:pathData="M30,55 L66,55 L66,58 L30,58 Z"/>
+
+    <!-- Símbolo de vacío (círculo con X) -->
+    <path
+        android:fillColor="@color/text_hint"
+        android:pathData="M48,10 A8,8 0 1,1 48,26 A8,8 0 1,1 48,10 Z"/>
+
+    <path
+        android:fillColor="@color/background_light"
+        android:pathData="M45,15 L51,21 M51,15 L45,21"
+        android:strokeColor="@color/background_light"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"/>
+</vector>

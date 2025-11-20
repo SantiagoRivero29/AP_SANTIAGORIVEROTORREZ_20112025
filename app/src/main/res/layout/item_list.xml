@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_list_item"
+    android:padding="14dp">
+
+    <!-- IMAGEN DEL PRODUCTO -->
+    <ImageView
+        android:id="@+id/imgProducto"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_item"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bg_icon_circle"
+        android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- NOMBRE DEL PRODUCTO -->
+    <TextView
+        android:id="@+id/txtProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nombre del producto"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:textColor="#222222"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@id/imgProducto"
+        android:layout_marginStart="12dp"
+        app:layout_constraintTop_toTopOf="@id/imgProducto"
+        app:layout_constraintEnd_toStartOf="@id/btnEditar"/>
+
+    <!-- CATEGORÍA -->
+    <TextView
+        android:id="@+id/txtCategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categoría"
+        android:textSize="13sp"
+        android:textColor="#777777"
+        app:layout_constraintStart_toStartOf="@id/txtProducto"
+        app:layout_constraintTop_toBottomOf="@id/txtProducto"/>
+
+    <!-- PRECIO -->
+    <TextView
+        android:id="@+id/txtPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bs. 0.00"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="#2E7D32"
+        app:layout_constraintStart_toStartOf="@id/txtProducto"
+        app:layout_constraintTop_toBottomOf="@id/txtCategoria"
+        android:layout_marginTop="4dp"/>
+
+    <!-- STOCK + UNIDAD -->
+    <TextView
+        android:id="@+id/txtStockUnidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stock: 0 (Unidad)"
+        android:textSize="13sp"
+        android:textColor="#555555"
+        app:layout_constraintStart_toEndOf="@id/txtPrecio"
+        app:layout_constraintBaseline_toBaselineOf="@id/txtPrecio"
+        android:layout_marginStart="16dp"/>
+
+    <!-- FECHA DE VENCIMIENTO -->
+    <TextView
+        android:id="@+id/txtFechaV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vence: 2025-12-31"
+        android:textSize="13sp"
+        android:textColor="#B71C1C"
+        app:layout_constraintStart_toStartOf="@id/txtProducto"
+        app:layout_constraintTop_toBottomOf="@id/txtPrecio"
+        android:layout_marginTop="6dp"/>
+
+    <!-- DESCRIPCIÓN -->
+    <TextView
+        android:id="@+id/txtDescripcion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Descripción del producto..."
+        android:textSize="13sp"
+        android:textColor="#444444"
+        android:maxLines="2"
+        android:ellipsize="end"
+        app:layout_constraintStart_toStartOf="@id/txtProducto"
+        app:layout_constraintTop_toBottomOf="@id/txtFechaV"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="6dp"/>
+
+    <!-- BADGE DE ESTADO -->
+    <TextView
+        android:id="@+id/txtEstado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="4dp"
+        android:text="Activo"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/bg_badge"
+        app:layout_constraintStart_toStartOf="@id/txtProducto"
+        app:layout_constraintTop_toBottomOf="@id/txtDescripcion"
+        android:layout_marginTop="8dp"/>
+
+    <!-- IDPRODUCTO / IDEMPRESA / IDCATEGORIA (pequeño gris) -->
+    <TextView
+        android:id="@+id/txtIds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID: 0 | Empresa: 0 | CatID: 0"
+        android:textSize="11sp"
+        android:textColor="#888888"
+        app:layout_constraintStart_toStartOf="@id/txtProducto"
+        app:layout_constraintTop_toBottomOf="@id/txtEstado"
+        android:layout_marginTop="4dp"/>
+
+    <!-- BOTÓN EDITAR -->
+    <ImageView
+        android:id="@+id/btnEditar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_edit"
+        android:padding="6dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnDetalles"
+        android:layout_marginEnd="6dp"/>
+
+    <!-- BOTÓN VER MÁS -->
+    <ImageView
+        android:id="@+id/btnDetalles"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:src="@drawable/ic_arrow_right"
+        android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

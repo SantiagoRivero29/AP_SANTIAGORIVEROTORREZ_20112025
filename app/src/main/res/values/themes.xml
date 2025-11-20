@@ -1,0 +1,14 @@
+<resources>
+    <style name="Theme.AC_API_18112025" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Color de la status bar -->
+        <item name="android:statusBarColor">@color/primary_light</item>
+
+        <!-- Íconos oscuros (true = iconos negros) -->
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Color de la Navigation Bar -->
+        <item name="android:navigationBarColor">@color/primary_light</item>
+
+    </style>
+</resources>
