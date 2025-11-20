@@ -3,28 +3,24 @@
 
     <!-- Activity Main (Pantalla de Bienvenida) -->
     <string name="app_logo">Logo de la aplicación</string>
-    <string name="main_title">¡Bienvenido!</string>
-    <string name="main_subtitle">Gestiona tu información de manera fácil y eficiente</string>
-    <string name="btn_continue">Comenzar</string>
+    <string name="main_title">¡Bienvenido a la empresa !</string>
+    <string name="main_subtitle">Santiago Rivero Torrez</string>
+    <string name="btn_continue">Ingresar</string>
 
     <!-- Activity Lista -->
-    <string name="input_section_title">Ingresa los Datos</string>
-    <string name="label_producto">NOMBRE DEL PRODUCTO</string>
-    <string name="hint_producto">Escribe el nombre del producto</string>
-    <string name="label_descripcion">DESCRIPCIÓN</string>
-    <string name="hint_descripcion">Agrega una descripción</string>
-    <string name="label_precio">PRECIO</string>
-    <string name="hint_precio">Ej. 12.50</string>
-    <string name="label_cantidad">CANTIDAD EN STOCK</string>
-    <string name="hint_cantidad">Ej. 100</string>
-    <string name="label_unidad">UNIDAD DE MEDIDA</string>
-    <string name="hint_unidad">unidad, caja, docena…</string>
-    <string name="label_fecha_vencimiento">FECHA DE VENCIMIENTO</string>
-    <string name="hint_fecha_vencimiento">YYYY-MM-DD</string>
-    <string name="label_estado">ESTADO</string>
-    <string name="label_categoria">CATEGORÍA</string>
-    <string name="hint_categoria">Ej. Alimentos</string>
-    <string name="btn_add_item">Agregar Producto</string>
+    <string name="input_section_title">EMPRESA</string>
+    <string name="label_producto">NOMBRE EMPRESA</string>
+    <string name="hint_producto">Escribe el nombre </string>
+    <string name="label_descripcion">TELEFONO</string>
+    <string name="hint_descripcion">Agrega numero telf</string>
+    <string name="label_precio">EMAIL</string>
+    <string name="hint_precio">pepitopepita123@gmail</string>
+    <string name="label_cantidad">NIT</string>
+    <string name="hint_cantidad">Ej. 388492</string>
+    <string name="label_unidad">PAIS</string>
+    <string name="hint_unidad">bolivia, chile, españa</string>
+
+    <string name="btn_add_item">Agregar Empresa</string>
     <string-array name="estado_options">
         <item>Disponible</item>
         <item>Fuera de Stock</item>

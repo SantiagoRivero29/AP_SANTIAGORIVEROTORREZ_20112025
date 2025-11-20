@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_list_item"
+    android:background="@color/black"
     android:padding="14dp">
 
     <!-- IMAGEN DEL PRODUCTO -->
@@ -12,22 +12,21 @@
         android:id="@+id/imgProducto"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/ic_item"
+        android:src="@drawable/companylogo"
         android:scaleType="centerCrop"
-        android:background="@drawable/bg_icon_circle"
         android:padding="8dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <!-- NOMBRE DEL PRODUCTO -->
     <TextView
-        android:id="@+id/txtProducto"
+        android:id="@+id/txtNombre"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Nombre del producto"
+        android:text="Nombre de la empresa"
         android:textStyle="bold"
         android:textSize="17sp"
-        android:textColor="#222222"
+        android:textColor="@color/white"
         android:maxLines="1"
         android:ellipsize="end"
         app:layout_constraintStart_toEndOf="@id/imgProducto"
@@ -35,96 +34,65 @@
         app:layout_constraintTop_toTopOf="@id/imgProducto"
         app:layout_constraintEnd_toStartOf="@id/btnEditar"/>
 
-    <!-- CATEGORÍA -->
+    <!-- PAIS -->
     <TextView
-        android:id="@+id/txtCategoria"
+        android:id="@+id/txtTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Categoría"
+        android:text="telefono"
         android:textSize="13sp"
-        android:textColor="#777777"
-        app:layout_constraintStart_toStartOf="@id/txtProducto"
-        app:layout_constraintTop_toBottomOf="@id/txtProducto"/>
+        android:textColor="@color/white"
 
-    <!-- PRECIO -->
+        app:layout_constraintStart_toStartOf="@id/txtNombre"
+        app:layout_constraintTop_toBottomOf="@id/txtNombre"/>
+    <!-- PAIS -->
     <TextView
-        android:id="@+id/txtPrecio"
+        android:id="@+id/txtDomicilio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bs. 0.00"
-        android:textStyle="bold"
-        android:textSize="15sp"
-        android:textColor="#2E7D32"
-        app:layout_constraintStart_toStartOf="@id/txtProducto"
-        app:layout_constraintTop_toBottomOf="@id/txtCategoria"
-        android:layout_marginTop="4dp"/>
-
-    <!-- STOCK + UNIDAD -->
-    <TextView
-        android:id="@+id/txtStockUnidad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Stock: 0 (Unidad)"
+        android:text="Domicilio"
         android:textSize="13sp"
-        android:textColor="#555555"
-        app:layout_constraintStart_toEndOf="@id/txtPrecio"
-        app:layout_constraintBaseline_toBaselineOf="@id/txtPrecio"
-        android:layout_marginStart="16dp"/>
+        android:textColor="@color/white"
 
-    <!-- FECHA DE VENCIMIENTO -->
+        app:layout_constraintStart_toStartOf="@id/txtTelefono"
+        app:layout_constraintTop_toBottomOf="@id/txtTelefono"/>
+
+    <!-- NIT -->
     <TextView
-        android:id="@+id/txtFechaV"
+        android:id="@+id/txtObservaciones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vence: 2025-12-31"
+        android:text="txtObservaciones"
         android:textSize="13sp"
-        android:textColor="#B71C1C"
-        app:layout_constraintStart_toStartOf="@id/txtProducto"
-        app:layout_constraintTop_toBottomOf="@id/txtPrecio"
-        android:layout_marginTop="6dp"/>
+        android:textColor="@color/white"
 
-    <!-- DESCRIPCIÓN -->
+        app:layout_constraintStart_toStartOf="@id/txtDomicilio"
+        app:layout_constraintTop_toBottomOf="@id/txtDomicilio"/>
+
+
+
+
     <TextView
-        android:id="@+id/txtDescripcion"
-        android:layout_width="0dp"
+        android:id="@+id/txtContacto"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Descripción del producto..."
+        android:text="txtContacto"
         android:textSize="13sp"
-        android:textColor="#444444"
-        android:maxLines="2"
-        android:ellipsize="end"
-        app:layout_constraintStart_toStartOf="@id/txtProducto"
-        app:layout_constraintTop_toBottomOf="@id/txtFechaV"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="6dp"/>
+        android:textColor="@color/white"
 
-    <!-- BADGE DE ESTADO -->
+        app:layout_constraintStart_toStartOf="@id/txtObservaciones"
+        app:layout_constraintTop_toBottomOf="@id/txtObservaciones"/>
     <TextView
-        android:id="@+id/txtEstado"
+        android:id="@+id/txtAbreviatura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="10dp"
-        android:paddingVertical="4dp"
-        android:text="Activo"
-        android:textStyle="bold"
-        android:textSize="12sp"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/bg_badge"
-        app:layout_constraintStart_toStartOf="@id/txtProducto"
-        app:layout_constraintTop_toBottomOf="@id/txtDescripcion"
-        android:layout_marginTop="8dp"/>
+        android:text="abreviatura"
+        android:textSize="13sp"
+        android:textColor="@color/white"
 
-    <!-- IDPRODUCTO / IDEMPRESA / IDCATEGORIA (pequeño gris) -->
-    <TextView
-        android:id="@+id/txtIds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ID: 0 | Empresa: 0 | CatID: 0"
-        android:textSize="11sp"
-        android:textColor="#888888"
-        app:layout_constraintStart_toStartOf="@id/txtProducto"
-        app:layout_constraintTop_toBottomOf="@id/txtEstado"
-        android:layout_marginTop="4dp"/>
+        app:layout_constraintStart_toStartOf="@id/txtContacto"
+        app:layout_constraintTop_toBottomOf="@id/txtContacto"/>
+
 
     <!-- BOTÓN EDITAR -->
     <ImageView

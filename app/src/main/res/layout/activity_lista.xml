@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_light"
+    android:background="@color/black"
     android:orientation="vertical"
     tools:context=".ListaActivity">
 
@@ -23,7 +23,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/bg_top_section"
             android:padding="20dp"
             android:elevation="6dp">
 
@@ -96,11 +95,10 @@
                     android:layout_marginBottom="4dp"/>
 
                 <EditText
-                    android:id="@+id/etDescripcion"
+                    android:id="@+id/etTelefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
-                    android:hint="@string/hint_descripcion"
                     android:textSize="16sp"
                     android:textColor="@color/text_primary"
                     android:textColorHint="@color/text_hint"
@@ -112,7 +110,6 @@
 
             </LinearLayout>
 
-            <!-- Precio -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,7 +121,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/label_precio"
+                    android:text="Domicilio"
                     android:textSize="12sp"
                     android:textColor="@color/text_secondary"
                     android:textStyle="bold"
@@ -133,10 +130,9 @@
                     android:layout_marginBottom="4dp"/>
 
                 <EditText
-                    android:id="@+id/etPrecio"
+                    android:id="@+id/etDomicilio"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:hint="@string/hint_precio"
                     android:textSize="16sp"
                     android:textColor="@color/text_primary"
                     android:textColorHint="@color/text_hint"
@@ -167,7 +163,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/label_cantidad"
+                        android:text="Observaciones"
                         android:textSize="12sp"
                         android:textColor="@color/text_secondary"
                         android:textStyle="bold"
@@ -176,10 +172,9 @@
                         android:layout_marginBottom="4dp"/>
 
                     <EditText
-                        android:id="@+id/etCantidadStock"
+                        android:id="@+id/etObservaciones"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
-                        android:hint="@string/hint_cantidad"
                         android:textSize="16sp"
                         android:textColor="@color/text_primary"
                         android:textColorHint="@color/text_hint"
@@ -202,7 +197,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/label_unidad"
+                        android:text="Contacto."
                         android:textSize="12sp"
                         android:textColor="@color/text_secondary"
                         android:textStyle="bold"
@@ -211,10 +206,9 @@
                         android:layout_marginBottom="4dp"/>
 
                     <EditText
-                        android:id="@+id/etUnidadMedida"
+                        android:id="@+id/etContacto"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
-                        android:hint="@string/hint_unidad"
                         android:textSize="16sp"
                         android:textColor="@color/text_primary"
                         android:textColorHint="@color/text_hint"
@@ -225,106 +219,40 @@
 
                 </LinearLayout>
 
-            </LinearLayout>
 
-            <!-- Fecha vencimiento -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/bg_input_container"
-                android:padding="4dp"
-                android:layout_marginBottom="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/label_fecha_vencimiento"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary"
-                    android:textStyle="bold"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="4dp"/>
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_input_container"
+                    android:padding="4dp"
+                    android:layout_marginStart="8dp">
 
-                <EditText
-                    android:id="@+id/etFechaVencimiento"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:hint="@string/hint_fecha_vencimiento"
-                    android:textSize="16sp"
-                    android:textColor="@color/text_primary"
-                    android:textColorHint="@color/text_hint"
-                    android:background="@android:color/transparent"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                android:inputType="text"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Abreviatura."
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="4dp"/>
 
-            </LinearLayout>
+                    <EditText
+                        android:id="@+id/etAbreviatura"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint"
+                        android:background="@android:color/transparent"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:inputType="textCapWords"/>
 
-            <!-- Estado -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/bg_input_container"
-                android:padding="4dp"
-                android:layout_marginBottom="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_estado"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary"
-                    android:textStyle="bold"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="4dp"/>
-
-                <Spinner
-                    android:id="@+id/spEstado"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:entries="@array/estado_options"
-                    android:background="@android:color/transparent"
-                    android:spinnerMode="dropdown"/>
-
-            </LinearLayout>
-
-            <!-- Categoría -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/bg_input_container"
-                android:padding="4dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_categoria"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary"
-                    android:textStyle="bold"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="4dp"/>
-
-                <EditText
-                    android:id="@+id/etCategoria"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:hint="@string/hint_categoria"
-                    android:textSize="16sp"
-                    android:textColor="@color/text_primary"
-                    android:textColorHint="@color/text_hint"
-                    android:background="@android:color/transparent"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:inputType="textCapSentences"/>
+                </LinearLayout>
 
             </LinearLayout>
 

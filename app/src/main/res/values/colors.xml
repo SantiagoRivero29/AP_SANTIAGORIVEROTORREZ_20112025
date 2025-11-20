@@ -10,9 +10,9 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- Colores primarios personalizados -->
-    <color name="primary">#2E7D96</color>
-    <color name="primary_dark">#1A5D7A</color>
-    <color name="primary_light">#4A9DB5</color>
+    <color name="primary">#BDB505</color>
+    <color name="primary_dark">#D3C400</color>
+    <color name="primary_light">#E7DE05</color>
 
     <!-- Colores de acento -->
     <color name="accent">#FF6B35</color>
@@ -36,9 +36,9 @@
 
     <!-- Colores para badges y elementos especiales -->
     <color name="badge_background">#E0F2FE</color>
-    <color name="badge_text">#075985</color>
+    <color name="badge_text">#078531</color>
 
     <!-- Colores de gradiente -->
-    <color name="gradient_start">#2E7D96</color>
-    <color name="gradient_end">#1A5D7A</color>
+    <color name="gradient_start">#147A01</color>
+    <color name="gradient_end">#15DC27</color>
 </resources>

@@ -25,10 +25,10 @@ import java.util.concurrent.Executors;
 
 public class ListaActivity extends Activity {
     ListView lvItems;
-    ArrayList<Producto> listaProducto = new ArrayList<>();
-    ProductAdapter adapter;
-    String apiUrl = "http://demoapi.somee.com/api/productos";
-    EditText etNombre, etDescripcion, etPrecio, etCantidadStock, etUnidadMedida, etFechaVencimiento, etCategoria;
+    ArrayList<Empresa> listaEmpresa = new ArrayList<>();
+    EmpresaAdapter adapter;
+    String apiUrl = "http://apijobs.somee.com/api/Empresas";
+    EditText etNombre, etTelefono, etDomicilio, etObservaciones, etContacto, etAbreviatura;
     Spinner spEstado;
     TextView tvItemCount, tvEmptyList;
     Button btnAddItem;
@@ -41,27 +41,25 @@ public class ListaActivity extends Activity {
 
         lvItems = findViewById(R.id.lvItems);
         etNombre = findViewById(R.id.etNombre);
-        etDescripcion = findViewById(R.id.etDescripcion);
-        etPrecio = findViewById(R.id.etPrecio);
-        etCantidadStock = findViewById(R.id.etCantidadStock);
-        etUnidadMedida = findViewById(R.id.etUnidadMedida);
-        etFechaVencimiento = findViewById(R.id.etFechaVencimiento);
-        etCategoria = findViewById(R.id.etCategoria);
-        spEstado = findViewById(R.id.spEstado);
+        etTelefono = findViewById(R.id.etTelefono);
+        etDomicilio = findViewById(R.id.etDomicilio);
+        etObservaciones = findViewById(R.id.etObservaciones);
+        etContacto = findViewById(R.id.etContacto);
+        etAbreviatura = findViewById(R.id.etAbreviatura);
         tvItemCount = findViewById(R.id.tvItemCount);
         tvEmptyList = findViewById(R.id.tvEmptyList);
         btnAddItem = findViewById(R.id.btnAddItem);
 
-        adapter = new ProductAdapter(this, listaProducto);
+        adapter = new EmpresaAdapter(this, listaEmpresa);
         lvItems.setAdapter(adapter);
         lvItems.setEmptyView(tvEmptyList);
 
-        cargarProductos();
+        cargarEmpresas();
 
         btnAddItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                agregarProducto();
+                agregarEmpresa();
             }
         });
     }
@@ -72,10 +70,10 @@ public class ListaActivity extends Activity {
         executorService.shutdownNow();
     }
 
-    private void cargarProductos() {
+    private void cargarEmpresas() {
         executorService.execute(() -> {
             HttpURLConnection con = null;
-            List<Producto> productosDescargados = new ArrayList<>();
+            List<Empresa> empresasDescargadas = new ArrayList<>();
             try{
                 URL url = new URL(apiUrl);
                 con = (HttpURLConnection) url.openConnection();
@@ -93,25 +91,23 @@ public class ListaActivity extends Activity {
                 for (int i = 0; i < array.length(); i++){
                     JSONObject obj = array.getJSONObject(i);
 
-                    Producto p = new Producto();
+                    Empresa p = new Empresa();
 
-                    p.setIdProducto(obj.optInt("idProducto", 0));
-                    p.setIdEmpresa(obj.optInt("idEmpresa", 0));
-                    p.setProducto1(obj.optString("producto1", "Sin nombre"));
-                    p.setDescripcion(obj.optString("descripcion", "Sin descripción"));
-                    p.setPrecio(obj.optDouble("precio", 0.0));
-                    p.setCantidadStock(obj.optInt("cantidadStock", 0));
-                    p.setUnidadMedida(obj.optString("unidadMedida", "Unidad"));
-                    p.setFechaVencimiento(obj.optString("fechaVencimiento", "Sin fecha"));
-                    p.setEstado(obj.optString("estado", "Disponible"));
-                    p.setCategoria(obj.optString("categoria", "Sin categoría"));
+                    p.setIdEmpresa(obj.optInt("IdEmpresa", 0));
+                    p.setNombre(obj.optString("Nombre", "Sin nombre"));
+                    p.setTelefono(obj.optString("Telefonos", ""));
+                    p.setDomicilio(obj.optString("Domicilio", ""));
+                    p.setContacto(obj.optString("Contacto", ""));
+                    p.setAbreviatura(obj.optString("Abreviatura", ""));
+                    p.setObservaciones(obj.optString("Observaciones", ""));
 
-                    productosDescargados.add(p);
+
+                    empresasDescargadas.add(p);
                 }
 
                 runOnUiThread(() -> {
-                    listaProducto.clear();
-                    listaProducto.addAll(productosDescargados);
+                    listaEmpresa.clear();
+                    listaEmpresa.addAll(empresasDescargadas);
                     adapter.notifyDataSetChanged();
                     actualizarResumenLista();
                 });
@@ -128,7 +124,7 @@ public class ListaActivity extends Activity {
         });
     }
 
-    private void agregarProducto() {
+    private void agregarEmpresa() {
         final String nombre = etNombre.getText().toString().trim();
         if (nombre.isEmpty()) {
             Toast.makeText(this, "El nombre es obligatorio", Toast.LENGTH_SHORT).show();
@@ -145,15 +141,13 @@ public class ListaActivity extends Activity {
                 con.setDoOutput(true);
 
                 JSONObject nuevo = new JSONObject();
-                nuevo.put("idEmpresa", 1);
-                nuevo.put("producto1", nombre);
-                nuevo.put("descripcion", etDescripcion.getText().toString().trim());
-                nuevo.put("precio", obtenerDoubleDesdeCampo(etPrecio, 0.0));
-                nuevo.put("cantidadStock", obtenerEnteroDesdeCampo(etCantidadStock, 0));
-                nuevo.put("unidadMedida", obtenerTextoODefecto(etUnidadMedida, "unidad"));
-                nuevo.put("fechaVencimiento", obtenerTextoODefecto(etFechaVencimiento, ""));
-                nuevo.put("estado", spEstado.getSelectedItem().toString());
-                nuevo.put("categoria", etCategoria.getText().toString().trim());
+                nuevo.put("IdEmpresa", 1);
+                nuevo.put("Nombre", nombre);
+                nuevo.put("Telefonos", etTelefono);
+                nuevo.put("Domicilio", etDomicilio);
+                nuevo.put("Contacto", etContacto);
+                nuevo.put("Abreviatura", etAbreviatura);
+                nuevo.put("Observaciones", etObservaciones);
 
                 con.getOutputStream().write(nuevo.toString().getBytes(StandardCharsets.UTF_8));
 
@@ -163,7 +157,7 @@ public class ListaActivity extends Activity {
                         Toast.makeText(this, "Producto agregado", Toast.LENGTH_SHORT).show();
                         limpiarFormulario();
                     });
-                    cargarProductos();
+                    cargarEmpresas();
                 } else {
                     runOnUiThread(() ->
                             Toast.makeText(this, "Error al agregar: " + respuesta, Toast.LENGTH_SHORT).show()
@@ -184,18 +178,16 @@ public class ListaActivity extends Activity {
 
     private void limpiarFormulario() {
         etNombre.setText("");
-        etDescripcion.setText("");
-        etPrecio.setText("");
-        etCantidadStock.setText("");
-        etUnidadMedida.setText("");
-        etFechaVencimiento.setText("");
-        etCategoria.setText("");
-        spEstado.setSelection(0);
+        etTelefono.setText("");
+        etAbreviatura.setText("");
+        etContacto.setText("");
+        etObservaciones.setText("");
+        etDomicilio.setText("");
     }
 
     private void actualizarResumenLista() {
         if (tvItemCount != null) {
-            tvItemCount.setText(String.format("%d items", listaProducto.size()));
+            tvItemCount.setText(String.format("%d items", ListaEmpresa.size()));
         }
     }
 
